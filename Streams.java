@@ -124,5 +124,22 @@ public class Streams {
                 .of(4, 7, 8, 4, 2, 7, 3, 8, 3, 8)
                 .summaryStatistics();
         System.out.println(summaryStatistics);
+
+        System.out.println("---------------------------");
+
+        // Parallel streams: using the parallel method print each String in the list.
+        // note that in each execution the sequence will be different,
+        Stream
+                .of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)
+                .parallel()
+                .forEach(System.out::println);
+
+        System.out.println("---------------------------");
+
+        // Parallel streams on Collections
+        List<Integer> list4 = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15);
+        list4
+                .parallelStream()
+                .forEach(System.out::println);
     }
 }
